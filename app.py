@@ -65,10 +65,12 @@ def model_predict(img_path, model):
         
     preds = model.predict(processed_image)
     
-    print('File path is: ' + img_path)
+    print('Deleting File at Path: ' + img_path)
 
     os.remove(img_path)
-    
+
+    print('Deleting File at Path - Success - ')
+
     return preds
 
 
