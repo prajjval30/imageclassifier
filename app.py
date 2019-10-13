@@ -30,7 +30,7 @@ MODEL_PATH = 'models/your_model.h5'
 # Check https://keras.io/applications/
 from keras.applications.resnet50 import ResNet50
 model = ResNet50(weights='imagenet')
-graph = tf.get_default_graph()
+#graph = tf.get_default_graph()
 
 print('Model loaded. Check http://127.0.0.1:5000/')
 
@@ -58,8 +58,9 @@ def model_predict(img_path, model):
     # otherwise, it won't make correct prediction!
     processed_image = preprocess_input(image_batch, mode='caffe')
     
-    with graph.as_default():    
-        preds = model.predict(processed_image)
+    #with graph.as_default():    
+    
+    preds = model.predict(processed_image)
     
     return preds
 
