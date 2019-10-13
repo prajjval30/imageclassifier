@@ -24,13 +24,16 @@ MODEL_PATH = 'models/your_model.h5'
 # Load your trained model
 # model = load_model(MODEL_PATH)
 # model._make_predict_function()          # Necessary
-# print('Model loaded. Start serving...')
+
+print('Model loading...')
 
 # You can also use pretrained model from Keras
 # Check https://keras.io/applications/
 from keras.applications.resnet50 import ResNet50
 model = ResNet50(weights='imagenet')
 #graph = tf.get_default_graph()
+
+print('Model loaded. Started serving...')
 
 print('Model loaded. Check http://127.0.0.1:5000/')
 
@@ -64,6 +67,8 @@ def model_predict(img_path, model):
     
     print('File path is: ' + img_path)
 
+    os.remove(img_path)
+    
     return preds
 
 
