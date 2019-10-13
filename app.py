@@ -96,9 +96,12 @@ def upload():
         return result
     return None
 
-if __name__ == '__main__':
+
+app.run(debug=False, threaded=False)
+
+#if __name__ == '__main__':
     
-    app.run(debug=False, threaded=False)
+ #   app.run(debug=False, threaded=False)
 
     # Serve the app with gevent
     # http_server = WSGIServer(('0.0.0.0', 5000), app)
