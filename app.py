@@ -59,9 +59,11 @@ def model_predict(img_path, model):
     processed_image = preprocess_input(image_batch, mode='caffe')
     
     #with graph.as_default():    
-    
+        
     preds = model.predict(processed_image)
     
+    print('File path is: ' + img_path)
+
     return preds
 
 
